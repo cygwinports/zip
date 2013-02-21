@@ -1,0 +1,22 @@
+NAME="zip"
+VERSION=3.0
+RELEASE=1
+CATEGORY="Archive"
+SUMMARY="Info-ZIP compression utility"
+DESCRIPTION="Zip is a compression and file packaging utility.  It is compatible
+with PKZIP 2.04g for MSDOS systems.  There is a companion to zip called unzip
+which handles decompression."
+HOMEPAGE="http://www.info-zip.org/"
+SRC_URI="mirror://sourceforge/infozip/zip${VERSION//.}.tar.gz"
+SRC_DIR="zip${VERSION//.}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake -f unix/Makefile generic CC=${CC} CPP="${CC} -E" EXE=".exe"
+}
+
+src_install() {
+	cd ${B}
+	USE_DESTDIR=0 cyginstall -f unix/Makefile MANDIR=${D}/usr/share/man/man1
+}
