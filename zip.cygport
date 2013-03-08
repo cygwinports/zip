@@ -13,7 +13,7 @@ SRC_DIR="zip${VERSION//.}"
 src_compile() {
 	lndirs
 	cd ${B}
-	cygmake -f unix/Makefile generic CC=${CC} CPP="${CC} -E" EXE=".exe"
+	cygmake -f unix/Makefile generic CC=${CC} CPP="${CC} -E" EXE=".exe" LOCAL_ZIP="${CFLAGS}"
 }
 
 src_install() {
