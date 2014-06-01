@@ -1,6 +1,6 @@
 NAME="zip"
 VERSION=3.0
-RELEASE=1
+RELEASE=2
 CATEGORY="Archive"
 SUMMARY="Info-ZIP compression utility"
 DESCRIPTION="Zip is a compression and file packaging utility.  It is compatible
@@ -9,6 +9,13 @@ which handles decompression."
 HOMEPAGE="http://www.info-zip.org/"
 SRC_URI="mirror://sourceforge/infozip/zip${VERSION//.}.tar.gz"
 SRC_DIR="zip${VERSION//.}"
+# zip-3.0-exec-shield.patch: ELF-specific
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/zip.git/plain/zip-3.0-currdir.patch
+	http://pkgs.fedoraproject.org/cgit/zip.git/plain/zip-3.0-time.patch
+	http://pkgs.fedoraproject.org/cgit/zip.git/plain/man.patch#/zip-3.0-man.patch
+	http://pkgs.fedoraproject.org/cgit/zip.git/plain/zip-3.0-format-security.patch
+"
 
 src_compile() {
 	lndirs
