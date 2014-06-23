@@ -1,6 +1,6 @@
 NAME="zip"
 VERSION=3.0
-RELEASE=2
+RELEASE=12
 CATEGORY="Archive"
 SUMMARY="Info-ZIP compression utility"
 DESCRIPTION="Zip is a compression and file packaging utility.  It is compatible
